@@ -14,7 +14,7 @@ def get_pghi(img, text_color:tuple=(0, 0, 0), text_font:str="", text_size:int=20
   return img
 
 def generate_img(text):
-  img = Image.open("img.jpeg")
+  img = Image.open("./img.jpeg")
   result = get_pghi(img, (33,150,243), "Roboto-Regular.ttf", 30, text)
 
   result.save("temp.jpeg")
