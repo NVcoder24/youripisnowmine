@@ -30,3 +30,5 @@ def send_img(rnd):
   ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
   generate_img(ip)
   return send_file("temp.jpeg")
+
+app.run()
