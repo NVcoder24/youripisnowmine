@@ -1,5 +1,4 @@
 from flask import Flask, send_file, request
-from generate import generate_vid, generate_img
 from PIL import Image, ImageDraw, ImageFont
 
 def get_pghi(img, text_color:tuple=(0, 0, 0), text_font:str="", text_size:int=20, text:str=""):
