@@ -31,4 +31,4 @@ def send_img(rnd):
   generate_img(ip)
   return send_file("temp.jpeg")
 
-app.run(port=8080)
+return app
