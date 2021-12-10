@@ -17,10 +17,10 @@ def get_pghi(img, text_color:tuple=(0, 0, 0), text_font:str="", text_size:int=20
   return img
 
 def generate_img(text):
-  img = Image.open("img.jpeg")
-  result = get_pghi(img, (33,150,243), "Roboto-Regular.ttf", 30, text)
+  img = Image.open("app/img.jpeg")
+  result = get_pghi(img, (33,150,243), "app/Roboto-Regular.ttf", 30, text)
 
-  result.save("temp.jpeg")
+  result.save("app/temp.jpeg")
 
 app = Flask(__name__)
 
@@ -32,4 +32,4 @@ def index():
 def send_img(rnd):
   ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
   generate_img(ip)
-  return send_file("temp.jpeg")
+  return send_file("app/temp.jpeg")
