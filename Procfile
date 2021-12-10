@@ -1,1 +1,1 @@
-web: python3 prod.py
+web: python3 prod.py -p $PORT
