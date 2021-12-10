@@ -2,6 +2,8 @@ from flask import Flask, send_file, request
 from PIL import Image, ImageDraw, ImageFont
 import os
 
+print(os.getcwd())
+
 def get_pghi(img, text_color:tuple=(0, 0, 0), text_font:str="", text_size:int=20, text:str=""):
   fnt = ImageFont.truetype(text_font, text_size)
   draw = ImageDraw.Draw(img)
