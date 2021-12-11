@@ -30,6 +30,9 @@ def index():
 
 @app.route("/img/<rnd>.jpeg")
 def send_img(rnd):
-  ip = request.environ['HTTP_X_FORWARDED_FOR']
+  if request.environ.get('HTTP_X_FORWARDED_FOR') is None:
+    ip = request.environ['REMOTE_ADDR']
+  else:
+    ip = request.environ['HTTP_X_FORWARDED_FOR']
   generate_img(ip)
   return send_file("../temp.jpeg")
